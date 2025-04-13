@@ -105,15 +105,20 @@
     border: 1px solid var(--color-border);
     position: relative;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
+/* Base rank styling */
 .rank {
     position: absolute;
-    top: -15px;
-    left: -15px;
+    top: 15px;
+    left: 15px;
     width: 40px;
     height: 40px;
-    background-color: var(--color-accent);
+    background-color: #444444;
+    /* Default dark gray for regular ranks */
     color: white;
     border-radius: 50%;
     display: flex;
@@ -126,16 +131,51 @@
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Gold medal for rank 1 */
+.rankGold {
+    background-color: #FFD700;
+    /* Gold color */
+    color: #333;
+    /* Dark text for better contrast on gold */
+    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Silver medal for rank 2 */
+.rankSilver {
+    background-color: #C0C0C0;
+    /* Silver color */
+    color: #333;
+    /* Dark text for better contrast on silver */
+    box-shadow: 0 3px 10px rgba(192, 192, 192, 0.4);
+}
+
+/* Bronze medal for rank 3 */
+.rankBronze {
+    background-color: #CD7F32;
+    /* Bronze color */
+    color: white;
+    box-shadow: 0 3px 10px rgba(205, 127, 50, 0.4);
+}
+
+/* Enhanced number visibility */
+.rankNumber {
+    font-weight: 800;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 .bookImageWrapper {
     flex: 0 0 150px;
     padding: 1.5rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bookImage {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 300px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
@@ -153,7 +193,7 @@
 
 .bookTitle {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
@@ -172,18 +212,18 @@
     font-family: var(--font-serif);
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 .bookMeta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--color-border);
-    padding-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .publisher {
-    font-size: 0.9rem;
     color: var(--color-ink);
     opacity: 0.7;
 }
@@ -193,21 +233,64 @@
     gap: 1rem;
 }
 
+/* Purchase section styling */
+.purchaseSection {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
+.purchaseTitle {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.purchaseTitle::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent);
+}
+
+.allBuyLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
 .buyLink {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: var(--color-accent);
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 500;
+    background-color: #e8e8e8;
+    color: #333333;
+    font-size: 0.85rem;
+    font-family: var(--font-serif);
     text-decoration: none;
-    border-radius: 2px;
-    transition: background-color 0.2s;
+    border: 1px solid #d0d0d0;
+    transition: all 0.2s;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .buyLink:hover {
-    background-color: var(--color-dark-accent);
+    background-color: #f0f0f0;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    top: 1px;
+    left: 1px;
     text-decoration: none;
+}
+
+.buyLink::before {
+    content: "→";
+    margin-right: 5px;
+    font-family: serif;
 }
 
 .footer {
@@ -237,6 +320,7 @@
     text-decoration: none;
 }
 
+/* Placeholder for books without images */
 .placeholderImage {
     width: 150px;
     height: 225px;
@@ -246,9 +330,7 @@
     text-align: center;
     padding: 1rem;
     background-color: #e0e0e0;
-    /* Light gray color */
     color: #333333;
-    /* Dark text color */
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -282,74 +364,7 @@
     background-color: var(--color-dark-accent);
 }
 
-/* Update these styles in your book-category.module.css for newspaper style */
-
-.purchaseSection {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #d0d0d0;
-    font-family: var(--font-serif);
-}
-
-.purchaseTitle {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--color-header);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    position: relative;
-    display: inline-block;
-}
-
-.purchaseTitle::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-accent);
-}
-
-.allBuyLinks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 0.5rem;
-}
-
-.buyLink {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #e8e8e8;
-    color: #333333;
-    font-size: 0.85rem;
-    font-family: var(--font-serif);
-    text-decoration: none;
-    border: 1px solid #d0d0d0;
-    transition: all 0.2s;
-    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.buyLink:hover {
-    background-color: #f0f0f0;
-    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-    top: 1px;
-    left: 1px;
-    text-decoration: none;
-}
-
-/* Add classic newspaper link styling */
-.buyLink::before {
-    content: "→";
-    margin-right: 5px;
-    font-family: serif;
-}
-
-/* Media queries for responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .title {
         font-size: 2.2rem;
@@ -397,6 +412,4 @@
     .introText {
         font-size: 1.1rem;
     }
-
-
 }

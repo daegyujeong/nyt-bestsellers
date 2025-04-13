@@ -108,7 +108,11 @@ export default async function BookListPage({
             <div className={styles.booksContainer}>
                 {books.map((book, index) => (
                     <article key={book.title} className={styles.bookItem}>
-                        <div className={styles.rank}>
+                        {/* Enhanced rank badge with medal colors for top 3 */}
+                        <div className={`${styles.rank} ${book.rank === 1 ? styles.rankGold :
+                                book.rank === 2 ? styles.rankSilver :
+                                    book.rank === 3 ? styles.rankBronze : ''
+                            }`}>
                             <span className={styles.rankNumber}>{book.rank}</span>
                         </div>
 
