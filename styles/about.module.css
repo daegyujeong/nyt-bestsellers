@@ -91,6 +91,59 @@
     text-align: center;
 }
 
+.techListWithIcons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.techItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.techItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.techIcon {
+    flex: 0 0 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    background-color: rgba(139, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.techIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.techText {
+    flex: 1;
+}
+
+.techText strong {
+    font-weight: 600;
+    color: var(--color-header);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: var(--font-display);
+}
+
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
@@ -98,5 +151,19 @@
 
     .container {
         padding: 0 1rem 2rem;
+    }
+
+    .techItem {
+        padding: 0.8rem;
+    }
+
+    .techIcon {
+        flex: 0 0 32px;
+        height: 32px;
+    }
+
+    .techIcon svg {
+        width: 18px;
+        height: 18px;
     }
 }

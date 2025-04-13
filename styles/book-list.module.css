@@ -1,3 +1,5 @@
+/* Complete book-list.module.css with all styles */
+
 .category {
     background-color: var(--color-paper);
     border: 1px solid var(--color-border);
@@ -54,20 +56,6 @@
     margin: 0.5rem 0 1rem;
 }
 
-.stamp {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-family: var(--font-serif);
-    font-size: 0.8rem;
-    background-color: var(--color-accent);
-    color: white;
-    padding: 0.3rem 0.5rem;
-    border-radius: 3px;
-    transform: rotate(3deg);
-    z-index: 2;
-}
-
 .readMore {
     display: flex;
     align-items: center;
@@ -75,28 +63,34 @@
     margin-top: 1rem;
     font-family: var(--font-serif);
     font-size: 0.9rem;
-    font-style: italic;
-    color: var(--color-accent);
-    transition: gap 0.3s ease;
+    color: var(--color-ink);
+    transition: color 0.3s ease;
+}
+
+.readMoreArrow {
+    transition: transform 0.3s ease;
 }
 
 .category:hover .readMore {
-    gap: 0.7rem;
+    color: var(--color-accent);
 }
 
-.category::after {
-    content: "";
+.category:hover .readMoreArrow {
+    transform: translateX(4px);
+}
+
+/* Rectangle indicator that changes color on hover */
+.rectangleIndicator {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 20px 20px;
-    border-color: transparent transparent var(--color-border) transparent;
-    transition: border-color 0.2s ease;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    transition: background-color 0.3s ease;
 }
 
-.category:hover::after {
-    border-color: transparent transparent var(--color-accent) transparent;
+/* Change rectangle color on hover */
+.category:hover .rectangleIndicator {
+    background-color: #4c2cb6;
 }

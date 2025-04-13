@@ -31,12 +31,9 @@ export default function BookList({ displayName, listNameEncoded, updated }: Book
                 <h3 className={styles.categoryTitle}>{displayName}</h3>
                 <p className={styles.categoryUpdated}>Updated: {updated}</p>
                 <div className={styles.readMore}>
-                    <span>Read More</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                    </svg>
+                    Read More <span className={styles.readMoreArrow}>→</span>
                 </div>
+                <div className={styles.rectangleIndicator}></div>
             </Link>
         </div>
     );
