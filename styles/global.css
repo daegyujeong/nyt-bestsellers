@@ -1,152 +1,172 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* Newspaper Layout Styles (Add to global.css) */
+
+.newspaper-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: var(--color-paper);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+
+.newspaper-header {
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 2px solid var(--color-ink);
+  margin-bottom: 2rem;
+  position: relative;
 }
-body {
+
+.date-edition {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.newspaper-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.2em;
+  text-transform: uppercase;
   line-height: 1;
+  color: var(--color-ink);
+  border-bottom: none;
+  position: relative;
+  display: inline-block;
 }
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+
+.newspaper-title::after,
+.newspaper-title::before {
   content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
-  padding-top: 150px;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
-  background-color: black;
-  color: white;
-  font-size: 18px;
+  position: absolute;
+  height: 3px;
+  background-color: var(--color-ink);
+  width: 80px;
+  bottom: -8px;
 }
 
-a {
-  color: inherit;
+.newspaper-title::after {
+  left: 50%;
+  transform: translateX(-100%);
+}
+
+.newspaper-title::before {
+  right: 50%;
+  transform: translateX(100%);
+}
+
+.newspaper-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+}
+
+.newspaper-content {
+  flex: 1;
+  padding: 1rem 0 3rem;
+}
+
+.newspaper-footer {
+  background-color: var(--color-paper);
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 2px solid var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-columns h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink);
+}
+
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-columns li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-columns a {
+  color: var(--color-ink);
   text-decoration: none;
 }
 
-a:hover {
+.footer-columns a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
+}
+
+.footer-border {
+  position: relative;
+  height: 6px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.footer-border:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  background-color: var(--color-ink);
+}
+
+.footer-border:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background-color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  .newspaper-title {
+    font-size: 2.2rem;
+  }
+
+  .newspaper-title::after,
+  .newspaper-title::before {
+    width: 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-columns {
+    gap: 2rem;
+  }
+
+  .date-edition {
+    font-size: 0.8rem;
+  }
 }

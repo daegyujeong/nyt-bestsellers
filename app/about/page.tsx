@@ -1,78 +1,57 @@
+import styles from "../../styles/about.module.css";
+
 export const metadata = {
-    title: "About",
-    description: "About the New York Times Best Sellers Explorer",
+    title: "About | The NYT Bestseller Chronicle",
+    description: "Technical information about this Next.js project",
 };
 
 export default function AboutPage() {
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-6">About NYT Best Sellers Explorer</h1>
+        <div className={styles.container}>
+            <article className={styles.article}>
+                <header className={styles.header}>
+                    <h2 className={styles.title}>About This Project</h2>
+                    <div className={styles.divider}></div>
+                    <p className={styles.subtitle}>
+                        A Next.js application for exploring NYT bestseller lists
+                    </p>
+                </header>
 
-            <div className="prose lg:prose-xl">
-                <p className="mb-4">
-                    The NYT Best Sellers Explorer is a modern web application that provides an interactive way to explore
-                    the New York Times Best Sellers lists. Built with performance and user experience in mind, this app
-                    allows you to discover popular books across various categories and genres.
-                </p>
+                <section className={styles.section}>
+                    <h3 className={styles.sectionTitle}>Project Overview</h3>
+                    <p>
+                        This application provides an interface to browse New York Times bestselling books across multiple categories. It uses a newspaper-inspired design to present the information in an elegant and readable format.
+                    </p>
+                </section>
 
-                <h2 className="text-2xl font-semibold mt-6 mb-4">Key Features</h2>
-                <ul className="list-disc pl-6 mb-6">
-                    <li>Browse comprehensive list of NYT Best Sellers categories</li>
-                    <li>View detailed information for books in each category</li>
-                    <li>See book covers, descriptions, and author information</li>
-                    <li>Direct purchase links to Amazon for each book</li>
-                    <li>Regular updates from NYT Books API</li>
-                    <li>Responsive design that works on all devices</li>
-                </ul>
+                <section className={styles.section}>
+                    <h3 className={styles.sectionTitle}>Technical Information</h3>
+                    <div className={styles.techInfo}>
+                        <ul className={styles.techList}>
+                            <li><strong>Framework:</strong> Next.js 14 with App Router architecture</li>
+                            <li><strong>Frontend:</strong> React 18 with CSS Modules</li>
+                            <li><strong>Data:</strong> New York Times Books API</li>
+                            <li><strong>Features:</strong> Dynamic routing, server components, responsive design</li>
+                            <li><strong>Deployment:</strong> Vercel</li>
+                        </ul>
+                    </div>
+                </section>
 
-                <h2 className="text-2xl font-semibold mt-6 mb-4">Technical Stack</h2>
-                <div className="mb-6">
-                    <h3 className="text-xl font-semibold mb-2">Frontend Framework</h3>
-                    <ul className="list-disc pl-6 mb-4">
-                        <li>Next.js 14 - React framework with server-side rendering</li>
-                        <li>TypeScript - For type safety and better development experience</li>
+                <section className={styles.section}>
+                    <h3 className={styles.sectionTitle}>Key Features</h3>
+                    <ul className={styles.featureList}>
+                        <li>Browse all New York Times bestseller lists</li>
+                        <li>View detailed information about books in each category</li>
+                        <li>Responsive design that works on mobile and desktop</li>
+                        <li>Clean, newspaper-inspired user interface</li>
+                        <li>Direct links to purchase books from various retailers</li>
                     </ul>
+                </section>
 
-                    <h3 className="text-xl font-semibold mb-2">Styling</h3>
-                    <ul className="list-disc pl-6 mb-4">
-                        <li>CSS Modules - For component-scoped styling</li>
-                        <li>Modern CSS features for responsive design</li>
-                    </ul>
-
-                    <h3 className="text-xl font-semibold mb-2">Data Fetching</h3>
-                    <ul className="list-disc pl-6 mb-4">
-                        <li>Server-side rendering with Next.js</li>
-                        <li>New York Times Books API integration</li>
-                    </ul>
-
-                    <h3 className="text-xl font-semibold mb-2">Development Tools</h3>
-                    <ul className="list-disc pl-6 mb-4">
-                        <li>TypeScript - For static type checking</li>
-                        <li>Git - For version control</li>
-                    </ul>
-                </div>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-4">Data Source</h2>
-                <p className="mb-4">
-                    This application uses the official New York Times Books API to fetch best sellers data.
-                    The content is regularly updated to ensure you have access to the latest best seller
-                    information. Each book entry includes detailed information such as:
-                </p>
-                <ul className="list-disc pl-6 mb-6">
-                    <li>Book title and author</li>
-                    <li>Cover image</li>
-                    <li>Description</li>
-                    <li>Ranking information</li>
-                    <li>Purchase links</li>
-                </ul>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-4">Performance Features</h2>
-                <ul className="list-disc pl-6 mb-6">
-                    <li>Server-side rendering for optimal loading speed</li>
-                    <li>Responsive images</li>
-                    <li>Optimized routing with Next.js App Router</li>
-                </ul>
-            </div>
+                <footer className={styles.aboutFooter}>
+                    <p>The application uses the New York Times Books API for educational purposes.</p>
+                </footer>
+            </article>
         </div>
     );
-} 
+}

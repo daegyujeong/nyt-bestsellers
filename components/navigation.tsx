@@ -9,11 +9,7 @@ export default function Navigation() {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.logo}>
-        <Link href="/">
-          NYT Best Sellers
-        </Link>
-      </div>
+      <div className={styles.decorativeRule}></div>
       <ul className={styles.links}>
         <li>
           <Link
@@ -23,6 +19,7 @@ export default function Navigation() {
             Home
           </Link>
         </li>
+        <li className={styles.separator}>|</li>
         <li>
           <Link
             href="/about"
@@ -32,6 +29,7 @@ export default function Navigation() {
           </Link>
         </li>
       </ul>
+      <div className={styles.decorativeRule}></div>
     </nav>
   );
 }
